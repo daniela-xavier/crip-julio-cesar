@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="crip-julio-cesar:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/crip_julio_cesar_jar</output-path>
+    <root id="archive" name="crip-julio-cesar.jar">
+      <element id="module-output" name="crip-julio-cesar" />
+    </root>
+  </artifact>
+</component>
