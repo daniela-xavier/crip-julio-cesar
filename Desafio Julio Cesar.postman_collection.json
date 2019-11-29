@@ -1,0 +1,84 @@
+{
+	"info": {
+		"_postman_id": "f8a356a8-e3c2-49f6-bb02-239c6a6c2827",
+		"name": "Desafio Julio Cesar",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": " POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "answer",
+							"type": "file",
+							"src": "/C:/answer.json"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.codenation.dev/v1/challenge/dev-ps/submit-solution?token=e88bbeb66f3171b5ae2dbc5276b250cd485cf5ef&answer=answer.json",
+					"protocol": "https",
+					"host": [
+						"api",
+						"codenation",
+						"dev"
+					],
+					"path": [
+						"v1",
+						"challenge",
+						"dev-ps",
+						"submit-solution"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "e88bbeb66f3171b5ae2dbc5276b250cd485cf5ef"
+						},
+						{
+							"key": "answer",
+							"value": "answer.json"
+						}
+					]
+				},
+				"description": "POST - answer.json"
+			},
+			"response": []
+		},
+		{
+			"name": "GET",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.codenation.dev/v1/challenge/dev-ps/generate-data?token=e88bbeb66f3171b5ae2dbc5276b250cd485cf5ef",
+					"protocol": "https",
+					"host": [
+						"api",
+						"codenation",
+						"dev"
+					],
+					"path": [
+						"v1",
+						"challenge",
+						"dev-ps",
+						"generate-data"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "e88bbeb66f3171b5ae2dbc5276b250cd485cf5ef"
+						}
+					]
+				},
+				"description": "GET - Desafio"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
