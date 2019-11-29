@@ -1,4 +1,5 @@
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.Expose;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -35,15 +36,19 @@ public class Mensagem {
 
     //Serialize o objeto para impressão
     String mensagemJson() {
-        Gson gson = new Gson();
+        GsonBuilder builder = new GsonBuilder();
+        builder.excludeFieldsWithoutExposeAnnotation();
+        Gson gson =  builder.create();
         return gson.toJson(this);
     }
 
     //Verifica se existe erro na mensagem
     Boolean mensagemStatus() {
         if (this.getErro() == null || this.getErro().isEmpty())
+            //não houve erro
             return false;
         else
+            //houve erro
             return true;
 
     }
@@ -52,7 +57,7 @@ public class Mensagem {
         String cifrado = this.getCifrado();
         int n = this.getNumero_casas();
         int l;
-        System.out.println(n);
+
         String decifrado = "";
 
         for (int i = 0; i < cifrado.length(); i++) {
