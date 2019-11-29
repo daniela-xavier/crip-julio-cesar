@@ -31,13 +31,6 @@
             <artifactId>httpmime</artifactId>
             <version>4.4.1</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.sun.jersey.contribs/jersey-multipart -->
-        <dependency>
-            <groupId>com.sun.jersey.contribs</groupId>
-            <artifactId>jersey-multipart</artifactId>
-            <version>1.9.1</version>
-        </dependency>
-
 
     </dependencies>
 

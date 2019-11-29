@@ -143,7 +143,6 @@ public class Principal extends JFrame {
         try {
             CloseableHttpClient client = HttpClients.createDefault();
             HttpPost httpPost = new HttpPost(uri);
-           // httpPost.setHeader(new BasicHeader("", ));
 
             MultipartEntityBuilder builder = MultipartEntityBuilder.create();
             builder.addBinaryBody("answer", new File("c:\\answer.json"), ContentType.APPLICATION_JSON, "answer.json");
@@ -154,15 +153,13 @@ public class Principal extends JFrame {
             final String requisicao = "Executando requisição " + httpPost.getRequestLine() + "\n";
             CloseableHttpResponse response = client.execute(httpPost);
 
-            System.out.println("StausLine: " + response.getStatusLine());
-            System.out.println("Entity: " + EntityUtils.toString(response.getEntity()));
-            System.out.println("URL: "+ uri);
+            String result = "Entity: " + EntityUtils.toString(response.getEntity());
 
             if (response.getStatusLine().getStatusCode() >= 200 && response.getStatusLine().getStatusCode() <= 300) {
+
                 Gson gson = new Gson();
-                String result = EntityUtils.toString(response.getEntity());
-                mensagem = gson.fromJson(result, Mensagem.class);
-                mensagem.setSucesso(new StringBuilder(requisicao));
+                mensagem.setSucesso(new StringBuilder(requisicao+"\n" +result+"\n"));
+
             } else {
                 mensagem.setErro("Falha na comunicação, código de erro: " + response.getStatusLine().getStatusCode());
             }
